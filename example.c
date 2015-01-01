@@ -152,9 +152,13 @@ static int ReadAttach(FILE **File, void *Buffer, unsigned int BufferSize)
 
 	Result = fread(Buffer, 1, BufferSize, *File);
 
-	if (Result != BufferSize && ferror(*File)) {
-		CloseAttach(File);
-		return -1;
+	if (Result != BufferSize) {
+		if (ferror(*File)) {
+			CloseAttach(File);
+			return -1;
+		}
+		else if (!Result && feof(*File))
+			CloseAttach(File);
 	}
 
 	return Result;
