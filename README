@@ -5,8 +5,8 @@ WWW: http://walmsley.gen.nz/
 Description
 ===========
 A simple API used to send out e-mails. It supports attachments but lacking authentication as it wasn't required for my use.
-It's Windows only due to the use of its DNS lookup functions, although outside of those, it should be easy to port but as there's far more advance tools out there, it's not worth the use.
-No tested but should be thread-safe.
+It's Windows only due to the use of its DNS lookup functions, although outside of those, it should be easy to port, although there are far superior tools out there.
+Not tested but should be thread-safe.
 
 Included an example.
 
